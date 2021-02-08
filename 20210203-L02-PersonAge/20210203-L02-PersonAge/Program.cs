@@ -16,8 +16,8 @@ namespace _20210203_L02_PersonAge
             foreach(int birthYear in birthYears)
             {
                 age2 = 0;
-                age1 = Person.calcAge(birthYear, out age1);
-                Person.calcAge(birthYear, out age2);
+                age1 = Person.calcAge(in birthYear, out age1);
+                Person.calcAge(in birthYear, out age2);
 
                 Console.WriteLine("Birthyear = {0}.\n - ret {1}\n - out {2}\n", birthYear, age1, age2);
             }
