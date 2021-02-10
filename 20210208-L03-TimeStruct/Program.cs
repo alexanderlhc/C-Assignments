@@ -29,17 +29,15 @@ namespace _20210208_L03_TimeStruct
         public int Hours
         {
           get { return _secondsFromMidnight / (60 * 60); }
-          set
-          {
-            int hours = _secondsFromMidnight / 60 * 60;
-            _secondsFromMidnight = _secondsFromMidnight - hours + (value * 60 * 60);
-          }
+          set { _secondsFromMidnight = _secondsFromMidnight - Hours + (value * 60 * 60); }
         }
         public int Minutes {
-          get { return (_secondsFromMidnight % (60 * 60)) / 60; }
+          get { return _secondsFromMidnight / 60 % 60; }
+          set { _secondsFromMidnight = (_secondsFromMidnight - Minutes * 60) + value * 60; }
         }
         public int Seconds {
           get { return _secondsFromMidnight % 60; }
+          set { _secondsFromMidnight = _secondsFromMidnight - Seconds + value; }
         }
 
         public override string ToString()
@@ -60,6 +58,15 @@ namespace _20210208_L03_TimeStruct
           {
               System.Console.WriteLine(time.ToString());
           }
+
+          System.Console.WriteLine("=====================");
+          Time t = times[0];
+          System.Console.WriteLine(t);
+          t.Hours = 12;
+          System.Console.WriteLine(t);
+          t.Minutes = 12;
+          t.Seconds = 12;
+          System.Console.WriteLine(t);
         }
     }
 }
