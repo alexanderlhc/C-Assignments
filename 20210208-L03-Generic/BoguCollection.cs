@@ -14,19 +14,26 @@ namespace _20210208_L03_Generic
 
     public class BoguCollection : ICollectionBogu<int, int>
     {
+        private Dictionary<int, int> data;
+
+        public BoguCollection()
+        {
+          data = new Dictionary<int,int>();
+        }
+
         public bool AddElement(int k, int e)
         {
-            throw new System.NotImplementedException();
+          return data.TryAdd(k, e);
         }
 
         public int GetElement(int k)
         {
-            throw new System.NotImplementedException();
+          return data[k];
         }
 
         public int Size()
         {
-            throw new System.NotImplementedException();
+          return data.Count;
         }
     }
 
