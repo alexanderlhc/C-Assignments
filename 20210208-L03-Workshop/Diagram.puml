@@ -1,0 +1,32 @@
+@startuml
+
+class Person {
+  String name
+  String addr
+}
+class Mechanic {
+  int graduationYear
+  int hourlyWage
+  int workHours
+
+  double getSalary()
+}
+class Foreman {
+  int promotionYear
+  int wageBonus
+
+  double +getSalary()
+}
+class Inspector {
+  int inspections
+  {abstract} int pricePerInspection
+
+  double +getSalary()
+}
+
+
+Person <|-- Mechanic : is a <
+Mechanic <|-- Foreman : is a <
+Mechanic <|-- Inspector : is a <
+
+@enduml
