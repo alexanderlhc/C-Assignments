@@ -34,7 +34,7 @@ namespace _20210210_L04_DelegatePerson
     public static List<Person> CreateListOfPeople() {
       return new List<Person>()
       {
-        new Person() { FirstName = "Stephen", LastName = "King" },
+            new Person() { FirstName = "Stephen", LastName = "King" },
             new Person() { FirstName = "George", LastName = "Martin" },
             new Person() { FirstName = "Ernest", LastName = "Hemingway" },
             new Person() { FirstName = "William", LastName = "Shakespeare" }

@@ -1,0 +1,36 @@
+﻿<Window x:Class="_20210224_L06_RadioButtons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_20210224_L06_RadioButtons"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="320">
+    <StackPanel>
+        <GroupBox Header="Dough" Margin="10" Padding="10">
+            <StackPanel x:Name="doughs">
+                <RadioButton GroupName="dough" Tag="40">Wheat 40,-</RadioButton>
+                <RadioButton GroupName="dough" Tag="70">Cauliflower 70,-</RadioButton>
+                <RadioButton GroupName="dough" Tag="50" IsChecked="True">Thick 50,-</RadioButton>
+                <RadioButton GroupName="dough" Tag="40">St. Louis 40,-</RadioButton>           
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Toppings" Margin="10" Padding="10">
+            <StackPanel x:Name="toppings" >
+                <CheckBox Tag="10" IsChecked="True">Cheese</CheckBox>
+                <CheckBox Tag="10" IsChecked="True">Tomatosauce</CheckBox>
+                <CheckBox Tag="10">Pineapple</CheckBox>
+                <CheckBox Tag="10">Mushroom</CheckBox>
+                <CheckBox Tag="10">Pepperoni</CheckBox>
+                <CheckBox Tag="10">Kale</CheckBox>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Price">
+            <StackPanel>
+                <Button Click="UpdateClickHandler">Get price!</Button>
+                <TextBlock x:Name="result"></TextBlock>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>
